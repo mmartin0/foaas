@@ -11,7 +11,7 @@ template = (message, subtitle) -> '
     <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
   </head>
 
-  <body background="/khan.jpg" style="background-size: 100%; margin-top:40px;">
+  <body background="'+subtitle+'" style="background-size: 100%; margin-top:40px;">
         <h1 style="padding-left: .2em; margin-top: .5em; font-size: 15em; color: white;">'+sanitizer.escape(message)+Array(100).join(sanitizer.escape(message)[sanitizer.escape(message).length-1])+'</h1>
   </body>
 </html>'
@@ -46,9 +46,14 @@ app.options "*", (req, res) ->
   res.header 'Access-Control-Allow-Headers', 'Content-Type'
   res.end()
 
-app.get '/khan/:name', (req, res) ->
+app.get '/kirk/:name', (req, res) ->
   message = "#{req.params.name}".toUpperCase()
-  subtitle = ""
+  subtitle = "/kirk.jpg"
+  dooutput(res, message, subtitle)
+
+app.get '/spock/:name', (req, res) ->
+  message = "#{req.params.name}".toUpperCase()
+  subtitle = "/spock.jpg"
   dooutput(res, message, subtitle)
 
 ###
