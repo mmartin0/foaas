@@ -1,6 +1,6 @@
 <html>
   <head>
-    <title>Fuck Off As A Service (FOAAS)</title>
+    <title>Khan As A Service (KHANAAS)</title>
 
     <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
   </head>
@@ -8,123 +8,27 @@
   <body style="">
     <div class="container">
       <div class="hero-unit">
-        <h1>FOAAS</h1>
-        <h2>Fuck Off As A Service</h2>
-        <p>Please see README for use.</p>
-        <p><em>v0.0.2</em></p>
+        <h1>KHANAAS</h1>
+        <h2>Khan As A Service</h2>
+	<img src='khan.jpg'/>
+	</br>
+        <p><em>v0.0.1</em></p>
       </div>
     </div>
     <div class="container">
       <div class="content" style="margin-left:50px;">
         <h2 id="introduction">Introduction</h2>
-        <p>FOAAS (Fuck Off As A Service) provides a modern, RESTful, scalable solution to the common problem of telling people to fuck off.</p>
-
-        <h2 id="contentnegotiation">Content Negotiation</h2>
-
-        <p>FOAAS will respond to the following 'Accept:' values with appropriate content</p>
-
-        <ul>
-          <li>text/plain - Content will be returned as a plain string.</li>
-          <li>application/json - Content will be returned as a JSON object { message: 'message', subtitle: 'subtitle' }</li>
-          <li>text/html - Content will be returned as an HTML page with a twitter bootstrap hero unit, containing the message and the subtitle.</li>
-        </ul>
+        <p>KHANAAS provides a way to express disdain for your friends and/or co-workers when they fuck up.</p>
 
         <h2 id="api">API</h2>
 
-        <h3 id="offnamefrom">/off/:name/:from</h3>
+        <h3 id="khanname">/khan/:name/</h3>
 
-        <p>Will return content of the form 'Fuck off, :name. - :from', e.g. /off/Tom/Chris will return 'Fuck off, Tom - Chris'</p>
-
-        <h3 id="younamefrom">/you/:name/:from</h3>
-
-        <p>Will return content of the form 'Fuck you, :name. - :from', e.g. /you/Tom/Chris will return 'Fuck you, Tom - Chris'</p>
-
-        <h3 id="thisfrom">/this/:from</h3>
-
-        <p>Will return content of the form 'Fuck this - :from', e.g. /this/Chris will return 'Fuck this. - Chris'</p>
-
-        <h3 id="thatfrom">/that/:from</h3>
-
-        <p>Will return content of the form 'Fuck that. - :from', e.g. /that/Chris will return 'Fuck that. - Chris'</p>
-
-        <h3 id="evenythingfrom">/everything/:from</h3>
-
-        <p>Will return content of the form 'Fuck everything. - :from', e.g. /everything/Chris will return 'Fuck everything. - Chris'</p>
-
-        <h3 id="everyonefrom">/everyone/:from</h3>
-
-        <p>Will return content of the form 'Everyone can go and fuck off. - :name', e.g. /everyone/Tom will return 'Everyone can go and fuck off. - Tom'</p>
-
-        <h3 id="donutnamefrom">/donut/:name/:from</h3>
-
-        <p>Will return content of the form ':name, go and take a flying fuck at a rolling donut. - :from', e.g. /donut/Tom/Chris will return 'Tom, go and take a flying fuck at a rolling donut. - Chris'</p>
-
-        <h3 id="shakespearenamefrom">/shakespeare/:name/:from</h3>
-
-        <p>Will return content of the form ':name, Thou clay-brained guts, thou knotty-pated fool, thou whoreson obscene greasy tallow-catch! - :from', e.g. /shakespeare/Falstaff/Prince%20Henry will return 'Falstaff, Thou clay-brained guts, thou knotty-pated fool, thou whoreson obscene greasy tallow-catch! - Prince Henry</p>
-
-        <h3 id="linusnamefrom">/linus/:name/:from</h3>
-
-        <p>Will return content of the form ':name, there aren't enough swear-words in the English language, so now I'll have to call you perkeleen vittupää just to express my disgust and frustration with this crap. - :from'. </p>
-
-        <h3 id="kingnamefrom">/king/:name/:from</h3>
-
-        <p>Will return content of the form 'Oh fuck off, just really fuck off you total dickface. Christ :name, you are fucking thick. - :from'. </p>
-
-        <h3 id="pink">/pink/:from</h3>
-
-        <p>Will return content of the form 'Well, Fuck me pink. - :from'. </p>
-
-        <h3 id="life">/life/:from</h3>
-
-        <p>Will return content of the form 'Fuck my life. - :from', e.g. /life/Phil will return 'Fuck my life. - Phil'</p>
-
-        <h3 id="chainsaw">/chainsaw/:name/:from</h3>
-
-        <p>Will return content of the form 'Fuck me gently with a chainsaw, :name. Do I look like Mother Teresa? - :from', e.g. /chainsaw/Chris/Heather will return 'Fuck me gently with a chainsaw, Chris. Do I look like Mother Teresa? - Heather</p>
-
-        <h3 id="thing">/:thing/:from</h3>
-
-        <p>Will return content of the form 'Fuck :thing. - :from', e.g. /pineapples/%E2%99%A5%20Chris will return 'Fuck pineapples. - ♥ Chris' </p>
-
-        <h3 id="thanks">/thanks/:from</h3>
-
-        <p>Will return content of the form 'Fuck you very much. - :from'. </p>
-
-        <h3 id="flying">/flying/:from</h3>
-
-        <p>Will return content of the form 'I don't give a flying fuck. - :from'. </p>
-
-        <h3 id="fascinating">/fascinating/:from</h3>
-
-        <p>Will return content of the form 'Fascinating story, in what chapter do you shut the fuck up? - :from'. </p>
-
-        <h2 id="alturls">Alternative URLs</h2>
-
-        <ul>
-          <li><a href="http://foaas.herokuapp.com">http://foaas.herokuapp.com</a></li>
-          <li><a href="http://foaas.com">http://foaas.com</a></li>
-        </ul>
-
-        <h2 id="roadmap">Roadmap</h2>
-
-        <p>FOASS will be extended to include the following functionality:</p>
-
-        <ul>
-        <li>Random fuck offs (or Fuck Off of the Day), without having to specify the operation (off, you, everyone, donut etc) explicitly</li>
-        <li>Internationalization based on Accept-Language.</li>
-        </ul>
-
-        <p>All contributions are very welcome.</p>
-
-        <p>Not Written in <a href="http://mozart.io">Mozart</a>.</p>
-        <p>Follow <a href="https://twitter.com/foaas">@foaas</a> on twitter!</p>
-        <p>Fork me on <a href="https://github.com/xenph/foaas">github</a></p>
-
-        <p>Created by <a href="https://twitter.com/TomDionysus">@TomDionysus</a></p>
-        <p>Maintained with loving Profanity by <a href="https://twitter.com/philip2156">@philip2156</a>, <a href="https://twitter.com/chris_beckett">@chris_beckett</a></p>
+        <p>Will return content of the form ':nameeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee'</p>
       </div>
     </div>
-    <script>!function(a,b,c,d,e,f,g){a.GoogleAnalyticsObject=e,a[e]=a[e]||function(){(a[e].q=a[e].q||[]).push(arguments)},a[e].l=1*new Date,f=b.createElement(c),g=b.getElementsByTagName(c)[0],f.async=1,f.src=d,g.parentNode.insertBefore(f,g)}(window,document,"script","//www.google-analytics.com/analytics.js","ga"),ga("create","UA-42551488-1","herokuapp.com"),ga("send","pageview"),ga('create','UA-42553958-1','foaas.com'),ga('send','pageview');</script>
+    <div style="padding-top: 10px; margin-top: 50px; margin-bottom: 0px; padding-bottom: 10px;" class="hero-unit">
+       <p><b>KHANAAS</b> is a fork of <a href="http://www.foaas.com">FOAAS</a> (Fuck Off As A Service). See FOAAS on <a href="https://github.com/xenph/foaas">github</a>.</p>
+    </div>
   </body>
 </html>

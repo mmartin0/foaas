@@ -6,20 +6,13 @@ operations = require './lib/operations'
 template = (message, subtitle) -> '
 <html>
   <head>
-    <title>Fuck Off As A Service (FOAAS)</title>
+    <title>Khan As A Service (KHANAAS)</title>
     <meta charset="utf-8">
     <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
   </head>
 
-  <body style="margin-top:40px;">
-    <div class="container">
-      <div id="view-10" view=""><div class="hero-unit">
-        <h1>'+sanitizer.escape(message)+'</h1>
-        <p><em>'+sanitizer.escape(subtitle)+'</em></p>
-        </div>
-      </div>
-    </div>
-    <script>!function(a,b,c,d,e,f,g){a.GoogleAnalyticsObject=e,a[e]=a[e]||function(){(a[e].q=a[e].q||[]).push(arguments)},a[e].l=1*new Date,f=b.createElement(c),g=b.getElementsByTagName(c)[0],f.async=1,f.src=d,g.parentNode.insertBefore(f,g)}(window,document,"script","//www.google-analytics.com/analytics.js","ga"),ga("create","UA-42551488-1","herokuapp.com"),ga("send","pageview");</script>
+  <body background="/khan.jpg" style="background-size: 100%; margin-top:40px;">
+        <h1 style="padding-left: .2em; margin-top: .5em; font-size: 15em; color: white;">'+sanitizer.escape(message)+Array(100).join(sanitizer.escape(message)[sanitizer.escape(message).length-1])+'</h1>
   </body>
 </html>'
 
@@ -53,98 +46,19 @@ app.options "*", (req, res) ->
   res.header 'Access-Control-Allow-Headers', 'Content-Type'
   res.end()
 
-app.get '/off/:name/:from', (req, res) ->
-  message = "Fuck off, #{req.params.name}."
-  subtitle = "- #{req.params.from}"
-  dooutput(res, message, subtitle)
-
-app.get '/you/:name/:from', (req, res) ->
-  message = "Fuck you, #{req.params.name}."
-  subtitle = "- #{req.params.from}"
-  dooutput(res, message, subtitle)
-
-app.get '/this/:from', (req, res) ->
-  message = "Fuck this."
-  subtitle = "- #{req.params. from}"
-  dooutput(res, message, subtitle)
-
-app.get '/that/:from', (req, res) ->
-  message = "Fuck that."
-  subtitle = "- #{req.params. from}"
-  dooutput(res, message, subtitle)
-
-app.get '/everything/:from', (req, res) ->
-  message = "Fuck everything."
-  subtitle = "- #{req.params. from}"
-  dooutput(res, message, subtitle)
-
-app.get '/everyone/:from', (req, res) ->
-  message = "Everyone can go and fuck off."
-  subtitle = "- #{req.params.from}"
-  dooutput(res, message, subtitle)
-
-app.get '/donut/:name/:from', (req, res) ->
-  message = "#{req.params.name}, go and take a flying fuck at a rolling donut."
-  subtitle = "- #{req.params.from}"
-  dooutput(res, message, subtitle)
-
-app.get '/shakespeare/:name/:from', (req, res) ->
-  message = "#{req.params.name}, Thou clay-brained guts, thou knotty-pated fool, thou whoreson obscene greasy tallow-catch!"
-  subtitle = "- #{req.params.from}"
-  dooutput(res, message, subtitle)
-
-app.get '/linus/:name/:from', (req, res) ->
-  message = "#{req.params.name}, there aren't enough swear-words in the English language, so now I'll have to call you perkeleen vittupää just to express my disgust and frustration with this crap."
-  subtitle = "- #{req.params.from}"
-  dooutput(res, message, subtitle)
-
-app.get '/king/:name/:from', (req, res) ->
-  message = "Oh fuck off, just really fuck off you total dickface. Christ #{req.params.name}, you are fucking thick."
-  subtitle = "- #{req.params.from}"
-  dooutput(res, message, subtitle)
-
-app.get '/pink/:from', (req, res) ->
-  message = "Well, Fuck me pink."
-  subtitle = "- #{req.params.from}"
-  dooutput(res, message, subtitle)
-
-app.get '/life/:from', (req, res) ->
-  message = "Fuck my life."
-  subtitle = "- #{req.params.from}"
-  dooutput(res, message, subtitle)
-
-app.get '/chainsaw/:name/:from', (req, res) ->
-  message = "Fuck me gently with a chainsaw, #{req.params.name}. Do I look like Mother Teresa?"
-  subtitle = "- #{req.params.from}"
-  dooutput(res, message, subtitle)
-
-app.get '/outside/:name/:from', (req, res) ->
-  message = "#{req.params.name}, why don't you go outside and play hide-and-go-fuck-yourself?"
-  subtitle = "- #{req.params.from}"
-  dooutput(res, message, subtitle)
-
-app.get '/thanks/:from', (req, res) ->
-  message = "Fuck you very much."
-  subtitle = "- #{req.params.from}"
-  dooutput(res, message, subtitle)
-
-app.get '/flying/:from', (req, res) ->
-  message = "I don't give a flying fuck."
-  subtitle = "- #{req.params.from}"
-  dooutput(res, message, subtitle)
-
-app.get '/fascinating/:from', (req, res) ->
-  message = "Fascinating story, in what chapter do you shut the fuck up?"
-  subtitle = "- #{req.params.from}"
+app.get '/khan/:name', (req, res) ->
+  message = "#{req.params.name}".toUpperCase()
+  subtitle = ""
   dooutput(res, message, subtitle)
 
 ###
   Additional routes should go above the catch all /:thing/ route
-###
+
 app.get '/:thing/:from', (req, res) ->
   message = "Fuck #{req.params.thing}."
   subtitle = "- #{req.params.from}"
   dooutput(res, message, subtitle)
+###
 
 operations(app)
 
