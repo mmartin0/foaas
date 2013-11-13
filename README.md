@@ -12,6 +12,6 @@ Will return content of the form ':nameeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
 
 ## /spock/:name/
 
-Will return content of the form ':nameeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee' with Zachary Qunto (as Spock) screaming in the background.
+Will return content of the form ':nameeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee' with Zachary Quinto (as Spock) screaming in the background.
 
 Forked from FOAAS.
