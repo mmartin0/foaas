@@ -64,4 +64,4 @@ operations(app)
 
 port = process.env.PORT || 5000
 app.listen port
-console.log "FOAAS Started on port #{port}"
+console.log "KHANAAS Started on port #{port}"
