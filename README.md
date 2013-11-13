@@ -2,7 +2,7 @@
 
 v0.0.2
 
-KHANAAS provides a way to express disdain for your friends and/or co-workers when they fuck up -- in the form of William Shatner (as Captain Kirk) or Zachary Qunto (as Spock) screaming their name.
+KHANAAS provides a way to express disdain for your friends and/or co-workers when they fuck up -- in the form of William Shatner (as Captain Kirk) or Zachary Quinto (as Spock) screaming their name.
 
 # API
 
