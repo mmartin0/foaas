@@ -6,11 +6,11 @@ KHANAAS provides a way to express disdain for your friends and/or co-workers whe
 
 # API
 
-## /kirk/:name/
+## /kirk/:name
 
 Will return content of the form ':nameeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee' with William Shatner (as Captain Kirk) screaming in the background.
 
-## /spock/:name/
+## /spock/:name
 
 Will return content of the form ':nameeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee' with Zachary Quinto (as Spock) screaming in the background.
 
