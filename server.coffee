@@ -1,29 +1,37 @@
 express = require 'express'
 sanitizer = require 'sanitizer'
+ops = require './lib/operations'
 
-operations = require './lib/operations'
-
-template = (message, subtitle) -> '
+template = (message, image) -> '
 <html>
   <head>
     <title>Khan As A Service (KHANAAS)</title>
     <meta charset="utf-8">
-    <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
+    <style>
+        span#message {
+        	font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;
+        	padding-left: .2em;
+        	font-weight: bold;
+        	color: white;
+        	font-size: 12em;
+        	display: inline-block;
+        	white-space: nowrap;
+        }
+	</style>
   </head>
-
-  <body background="'+subtitle+'" style="background-size: 100%; margin-top:40px;">
-        <h1 style="padding-left: .2em; margin-top: .5em; font-size: 15em; color: white;">'+sanitizer.escape(message)+Array(100).join(sanitizer.escape(message)[sanitizer.escape(message).length-1])+'</h1>
+  <body background="'+image+'" style="background-size: 100%; margin-top:40px;">
+        <span id="message">'+message+'</span>
   </body>
 </html>'
 
-dooutput = (res, message, subtitle) ->
+dooutput = (res, message, image) ->
   res.format
     "text/plain": ->
-      res.send "#{message} #{subtitle}"
+      res.send "#{message} #{image}"
     "application/json": ->
-      res.send JSON.stringify { message: message, subtitle: subtitle }
+      res.send JSON.stringify { message: message, image: image }
     "text/html": ->
-      res.send template(message,subtitle)
+      res.send template(message,image)
 
 app = express()
 app.use(express.bodyParser())
@@ -46,26 +54,29 @@ app.options "*", (req, res) ->
   res.header 'Access-Control-Allow-Headers', 'Content-Type'
   res.end()
 
-app.get '/kirk/:name', (req, res) ->
-  message = "#{req.params.name}".toUpperCase()
-  subtitle = "/kirk.jpg"
-  dooutput(res, message, subtitle)
+app.get '/kirk/:message', (req, res) ->
+  message = ops.khan("#{req.params.message}")
+  image = "/images/kirk.jpg"
+  dooutput(res, message, image)
 
-app.get '/spock/:name', (req, res) ->
-  message = "#{req.params.name}".toUpperCase()
-  subtitle = "/spock.jpg"
-  dooutput(res, message, subtitle)
+app.get '/spock/:message', (req, res) ->
+  message = ops.khan("#{req.params.message}") 
+  image = "/images/spock.jpg"
+  dooutput(res, message, image)
+
+app.get '/jones/:message', (req, res) ->
+  message = ops.jones("#{req.params.message}") 
+  image = "/images/jones.jpg"
+  dooutput(res, message, image)
 
 ###
   Additional routes should go above the catch all /:thing/ route
 
 app.get '/:thing/:from', (req, res) ->
   message = "Fuck #{req.params.thing}."
-  subtitle = "- #{req.params.from}"
-  dooutput(res, message, subtitle)
+  image = "- #{req.params.from}"
+  dooutput(res, message, image)
 ###
-
-operations(app)
 
 port = process.env.PORT || 5000
 app.listen port
