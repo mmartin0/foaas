@@ -3,8 +3,8 @@ REPEAT_LENGTH = 100;
 
 module.exports = 
   khan: (name) ->
-    name = name.toUpperCase();
-    return sanitizer.escape(name)+Array(REPEAT_LENGTH).join(sanitizer.escape(name)[sanitizer.escape(name).length-1])
+    name = sanitizer.escape(name.toUpperCase());
+    return name+Array(REPEAT_LENGTH).join(name[name.length-1])
 
   jones: (noun) ->
     noun = sanitizer.escape(noun);
