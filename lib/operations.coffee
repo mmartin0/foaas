@@ -9,4 +9,4 @@ module.exports =
   jones: (noun) ->
     noun = sanitizer.escape(noun);
     noun = noun[0].toUpperCase()+noun[1..-1];
-    return noun+'. I <i>hate</i> '+noun+'.';
+    return noun+'. I <b><i>hate</i></b> '+noun+'.';

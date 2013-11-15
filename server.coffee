@@ -13,7 +13,7 @@ template = (message, image) -> '
         	padding-left: .2em;
         	font-weight: bold;
         	color: white;
-        	font-size: 12em;
+        	font-size: 10em;
         	display: inline-block;
         	white-space: nowrap;
         }
