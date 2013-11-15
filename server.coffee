@@ -1,6 +1,7 @@
 express = require 'express'
 sanitizer = require 'sanitizer'
 ops = require './lib/operations'
+path = require 'path'
 
 template = (message, image) -> '
 <html>
@@ -55,6 +56,7 @@ app.use (req, res, next) ->
 
 app.use(app.router)
 app.use(express.static('./public'))
+app.use(express.favicon(path.join(__dirname, 'public/images/favicon.ico'))); 
 app.use (req, res) ->
   res.sendfile("./public/index.html")
 
