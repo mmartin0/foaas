@@ -81,15 +81,6 @@ app.get '/jones/:message', (req, res) ->
   image = "/images/jones.jpg"
   dooutput(res, message, image)
 
-###
-  Additional routes should go above the catch all /:thing/ route
-
-app.get '/:thing/:from', (req, res) ->
-  message = "Fuck #{req.params.thing}."
-  image = "- #{req.params.from}"
-  dooutput(res, message, image)
-###
-
 port = process.env.PORT || 5000
 app.listen port
 console.log "KHANAAS Started on port #{port}"
