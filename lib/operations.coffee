@@ -1,5 +1,7 @@
 sanitizer = require 'sanitizer'
-REPEAT_LENGTH = 100;
+VOWEL_REPEAT_LENGTH = 10;
+END_REPEAT_LENGTH=30;
+MIN_LENGTH=10;
 
 module.exports = 
   khan: (name) ->
@@ -16,7 +18,16 @@ module.exports =
     middle = name.substring last_vowel_index, last_vowel_index+1;
     last = name.substring last_vowel_index+1;
 
-    return first+Array(REPEAT_LENGTH).join(middle)+last
+    templast = ""
+    for letter in last
+        templast += Array(Math.floor(END_REPEAT_LENGTH/last.length)).join(letter)
+
+    last = templast;
+
+    if(first.length+VOWEL_REPEAT_LENGTH+last.length < MIN_LENGTH)
+        VOWEL_REPEAT_LENGTH = END_REPEAT_LENGTH;
+
+    return first+Array(VOWEL_REPEAT_LENGTH).join(middle)+last
 
   jones: (noun) ->
     noun = sanitizer.escape(noun);
