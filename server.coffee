@@ -81,6 +81,11 @@ app.get '/jones/:message', (req, res) ->
   image = "/images/jones.jpg"
   dooutput(res, message, image)
 
+app.get '/khan/:message', (req, res) ->
+  message = ops.khan("#{req.params.message}")
+  image = "/images/salkhan.jpg"
+  dooutput(res, message, image)
+
 port = process.env.PORT || 5000
 app.listen port
 console.log "KHANAAS Started on port #{port}"
